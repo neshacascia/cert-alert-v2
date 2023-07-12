@@ -1,6 +1,6 @@
 export default function FormModal({ setFormOpened }) {
   return (
-    <div className="bg-[rgba(0,0,0,0.4)] h-screen flex justify-center items-center fixed inset-0 z-50">
+    <div className="bg-[rgba(0,0,0,0.5)] h-screen flex justify-center items-center fixed inset-0 z-50">
       <form
         className={
           'text-black bg-[#ffffff] w-[50%] h-[60%] flex flex-col justify-center gap-10 px-8'
