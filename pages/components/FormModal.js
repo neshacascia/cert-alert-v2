@@ -64,6 +64,7 @@ export default function FormModal({ setFormOpened }) {
           </button>
           <button
             type="button"
+            onClick={() => setFormOpened(false)}
             className="text-white bg-red-500 font-medium w-[120px] rounded-3xl py-2 px-2"
           >
             Cancel
