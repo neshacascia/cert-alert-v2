@@ -6,9 +6,19 @@ export default function FormModal({ setFormOpened }) {
   const licenceNoInputRef = useRef();
   const licenceExpiryInputRef = useRef();
 
+  function submitHandler(e) {
+    e.preventDefault();
+
+    const enteredFirstNameValue = firstNameInputRef.current.value;
+    const enteredLastNameValue = lastNameInputRef.current.value;
+    const enteredLicenceNoValue = licenceNoInputRef.current.value;
+    const enteredLicenceExpiryValue = licenceExpiryInputRef.current.value;
+  }
+
   return (
     <div className="bg-[rgba(0,0,0,0.5)] h-screen flex justify-center items-center fixed inset-0 z-50">
       <form
+        onSubmit={submitHandler}
         className={
           'text-black bg-[#ffffff] w-[50%] h-[60%] flex flex-col justify-center gap-10 px-8'
         }
