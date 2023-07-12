@@ -55,7 +55,7 @@ export default function FormModal({ setFormOpened }) {
           </label>
         </div>
 
-        <div className="flex justify-end gap-6 pt-6">
+        <div className="flex justify-end gap-6">
           <button
             type="submit"
             className="text-white bg-green-500 font-medium w-[120px] rounded-3xl py-3 px-1"
