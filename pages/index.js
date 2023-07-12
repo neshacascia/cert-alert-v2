@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <button onClick={() => setFormOpened(true)}>Add Guard</button>
 
-      {formOpened && <FormModal />}
+      {formOpened && <FormModal formOpened={formOpened} />}
     </main>
   );
 }
