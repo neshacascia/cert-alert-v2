@@ -22,6 +22,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
     };
 
     addGuardHandler(guardData);
+    setFormOpened(false);
   }
 
   return (
