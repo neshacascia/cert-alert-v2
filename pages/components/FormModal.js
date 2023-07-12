@@ -44,6 +44,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
               id="first-name"
               ref={firstNameInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
+              required
             />
           </label>
 
@@ -57,6 +58,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
               id="last-name"
               ref={lastNameInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
+              required
             />
           </label>
         </div>
@@ -69,6 +71,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
               id="sg-no"
               ref={licenceNoInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
+              required
             />
           </label>
 
@@ -82,6 +85,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
               id="sg-expiry"
               ref={licenceExpiryInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
+              required
             />
           </label>
         </div>
