@@ -58,14 +58,14 @@ export default function FormModal({ setFormOpened }) {
         <div className="flex justify-end gap-6">
           <button
             type="submit"
-            className="text-white bg-green-500 font-medium w-[120px] rounded-3xl py-3 px-1"
+            className="text-white bg-green-500 font-medium w-[120px] rounded-3xl py-3 px-1 hover:bg-green-300"
           >
             Submit
           </button>
           <button
             type="button"
             onClick={() => setFormOpened(false)}
-            className="text-white bg-red-500 font-medium w-[120px] rounded-3xl py-2 px-2"
+            className="text-white bg-red-500 font-medium w-[120px] rounded-3xl py-2 px-2 hover:bg-red-300"
           >
             Cancel
           </button>
