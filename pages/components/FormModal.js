@@ -27,7 +27,7 @@ export default function FormModal({ setFormOpened }) {
             <input
               type="text"
               id="last-name"
-              className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 pl-5 mt-2"
+              className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
             />
           </label>
         </div>
