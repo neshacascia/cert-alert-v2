@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-export default function FormModal({ setFormOpened }) {
+export default function FormModal({ setFormOpened, addGuardHandler }) {
   const firstNameInputRef = useRef();
   const lastNameInputRef = useRef();
   const licenceNoInputRef = useRef();
@@ -13,6 +13,15 @@ export default function FormModal({ setFormOpened }) {
     const enteredLastNameValue = lastNameInputRef.current.value;
     const enteredLicenceNoValue = licenceNoInputRef.current.value;
     const enteredLicenceExpiryValue = licenceExpiryInputRef.current.value;
+
+    const guardData = {
+      firstName: enteredFirstNameValue,
+      lastName: enteredLastNameValue,
+      licenceNo: enteredLicenceNoValue,
+      licenceExpiry: enteredLicenceExpiryValue,
+    };
+
+    addGuardHandler(guardData);
   }
 
   return (
