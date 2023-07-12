@@ -1,4 +1,11 @@
+import { useRef } from 'react';
+
 export default function FormModal({ setFormOpened }) {
+  const firstNameInputRef = useRef();
+  const lastNameInputRef = useRef();
+  const licenceNoInputRef = useRef();
+  const licenceExpiryInputRef = useRef();
+
   return (
     <div className="bg-[rgba(0,0,0,0.5)] h-screen flex justify-center items-center fixed inset-0 z-50">
       <form
@@ -15,6 +22,7 @@ export default function FormModal({ setFormOpened }) {
             <input
               type="text"
               id="first-name"
+              ref={firstNameInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
             />
           </label>
@@ -27,6 +35,7 @@ export default function FormModal({ setFormOpened }) {
             <input
               type="text"
               id="last-name"
+              ref={lastNameInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
             />
           </label>
@@ -38,6 +47,7 @@ export default function FormModal({ setFormOpened }) {
             <input
               type="number"
               id="sg-no"
+              ref={licenceNoInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
             />
           </label>
@@ -50,6 +60,7 @@ export default function FormModal({ setFormOpened }) {
             <input
               type="date"
               id="sg-expiry"
+              ref={licenceExpiryInputRef}
               className="bg-[#fbfbfb] border-draft font-medium border-[1px] rounded-[4px] py-3 px-5 mt-2"
             />
           </label>
