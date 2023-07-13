@@ -1,3 +1,4 @@
+import { MongoClient } from 'mongodb';
 import { useState } from 'react';
 import FormModal from './components/FormModal';
 import Table from './components/Table';
@@ -34,4 +35,27 @@ export default function Home() {
       )}
     </main>
   );
+}
+
+export async function getServerSideProps() {
+  const client = await MongoClient.connect(process.env.NEXT_PUBLIC_API_TOKEN);
+
+  const db = client.db();
+  const guardsCollections = db.collection('guards');
+
+  const guards = await guardsCollections.find().toArray();
+
+  client.close();
+
+  return {
+    props: {
+      guards: guards.map(guard => ({
+        id: guard._id.toString(),
+        firstName: guard.firstName,
+        lastName: guard.lastName,
+        licenceNo: guard.licenceNo,
+        licenceExpiry: guard.licenceExpiry,
+      })),
+    },
+  };
 }
