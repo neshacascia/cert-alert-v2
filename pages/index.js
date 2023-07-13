@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FormModal from './components/FormModal';
 import Table from './components/Table';
 
-export default function Home() {
+export default function Home(props) {
   const [formOpened, setFormOpened] = useState(false);
 
   async function addGuardHandler(enteredGuardData) {
@@ -24,7 +24,7 @@ export default function Home() {
       <button onClick={() => setFormOpened(true)}>Add Guard</button>
 
       <div className="w-[80%] h-[90%]">
-        <Table />
+        <Table guardData={props.guards} />
       </div>
 
       {formOpened && (
