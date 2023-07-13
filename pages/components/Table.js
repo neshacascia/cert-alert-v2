@@ -3,10 +3,10 @@ export default function Table() {
     <table className="text-left w-full h-auto border-collapse table-auto">
       <thead className="bg-slate-200 h-14">
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Security Licence No.</th>
-          <th>Licence Expiry Date</th>
+          <th className="pl-8">First Name</th>
+          <th className="pl-8">Last Name</th>
+          <th className="pl-8">Security Licence No.</th>
+          <th className="pl-8">Licence Expiry Date</th>
         </tr>
       </thead>
 
