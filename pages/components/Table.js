@@ -1,4 +1,4 @@
-export default function Table() {
+export default function Table({ guardData }) {
   return (
     <table className="text-left w-full h-auto border-collapse table-auto">
       <thead className="bg-slate-200 h-14 border-b-2 border-slate-400">
@@ -19,12 +19,14 @@ export default function Table() {
       </thead>
 
       <tbody>
-        <tr>
-          <td>Nesha</td>
-          <td>Mervin</td>
-          <td>123</td>
-          <td>5</td>
-        </tr>
+        {guardData.map(guard => (
+          <tr>
+            <td>{guard.firstName}</td>
+            <td>{guard.lastName}</td>
+            <td>{guard.licenceNo}</td>
+            <td>{guard.licenceExpiry}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
