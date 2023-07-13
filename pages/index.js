@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import FormModal from './components/FormModal';
+import Table from './components/Table';
 
 export default function Home() {
   const [formOpened, setFormOpened] = useState(false);
@@ -18,8 +19,12 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className="w-screen h-screen flex flex-col items-center">
       <button onClick={() => setFormOpened(true)}>Add Guard</button>
+
+      <div className="w-[80%] h-[90%]">
+        <Table />
+      </div>
 
       {formOpened && (
         <FormModal
