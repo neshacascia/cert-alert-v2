@@ -24,7 +24,7 @@ export default function Table({ guardData }) {
             {Object.values(guard)
               .slice(1)
               .map(data => (
-                <td>{data}</td>
+                <td className="pl-8 py-4">{data}</td>
               ))}
           </tr>
         ))}
