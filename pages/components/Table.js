@@ -20,7 +20,7 @@ export default function Table({ guardData }) {
 
       <tbody>
         {guardData.map(guard => (
-          <tr key={guard.id}>
+          <tr key={guard.id} className="border-b-[1px] border-[#ddd]">
             {Object.values(guard)
               .slice(1)
               .map(data => (
