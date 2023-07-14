@@ -20,11 +20,12 @@ export default function Table({ guardData }) {
 
       <tbody>
         {guardData.map(guard => (
-          <tr>
-            <td>{guard.firstName}</td>
-            <td>{guard.lastName}</td>
-            <td>{guard.licenceNo}</td>
-            <td>{guard.licenceExpiry}</td>
+          <tr key={guard.id}>
+            {Object.values(guard)
+              .slice(1)
+              .map(data => (
+                <td>{data}</td>
+              ))}
           </tr>
         ))}
       </tbody>
