@@ -33,6 +33,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
       lastName: enteredLastNameValue,
       licenceNo: enteredLicenceNoValue,
       licenceExpiry: enteredLicenceExpiryValue,
+      status: status,
     };
 
     addGuardHandler(guardData);
