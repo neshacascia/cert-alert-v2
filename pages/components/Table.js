@@ -35,8 +35,15 @@ export default function Table({ guardData }) {
           >
             {Object.values(guard)
               .slice(1)
-              .map(data => (
-                <td className="text-gray-700 pl-8 py-3">{data}</td>
+              .map((data, ind, arr) => (
+                <td className="text-gray-700 pl-8 py-3">
+                  {ind === arr.length - 1 ? (
+                    <span className={statusStyles[data]}>{data}</span>
+                  ) : (
+                    data
+                  )}
+                  {data}
+                </td>
               ))}
           </tr>
         ))}
