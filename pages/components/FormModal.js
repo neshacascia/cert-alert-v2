@@ -22,6 +22,14 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
       moment(enteredLicenceExpiryValue, 'YYYY-MM-DD').diff(currentDate, 'days')
     );
 
+    if (daysDiff >= 60) {
+      status = 'Active';
+    } else if (daysDiff >= 1) {
+      status = 'Expiring Soon';
+    } else if (daysDiff === 0) {
+      status = 'Expired';
+    }
+
     const guardData = {
       firstName: enteredFirstNameValue,
       lastName: enteredLastNameValue,
