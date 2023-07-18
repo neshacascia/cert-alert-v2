@@ -16,17 +16,12 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
     const enteredFirstNameValue = firstNameInputRef.current.value;
     const enteredLastNameValue = lastNameInputRef.current.value;
     const enteredLicenceNoValue = licenceNoInputRef.current.value;
-    const enteredLicenceExpiryValue = moment(
-      licenceExpiryInputRef.current.value
-    );
+    const enteredLicenceExpiryValue = licenceExpiryInputRef.current.value;
 
-    if (enteredLicenceExpiryValue.isAfter(currentDate)) {
-      status = 'Active';
-    } else if (enteredLicenceExpiryValue.isBefore(currentDate)) {
-      status = 'Expiring Soon!';
-    } else {
-      status = 'Expired!';
-    }
+    const daysDiff = moment(enteredLicenceExpiryValue, 'YYYY-MM-DD').diff(
+      currentDate,
+      'days'
+    );
 
     const guardData = {
       firstName: enteredFirstNameValue,
