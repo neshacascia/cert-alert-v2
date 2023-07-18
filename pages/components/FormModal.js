@@ -7,6 +7,8 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
   const licenceNoInputRef = useRef();
   const licenceExpiryInputRef = useRef();
 
+  const currentDate = moment().format('YYYY/MM/D');
+
   function submitHandler(e) {
     e.preventDefault();
 
