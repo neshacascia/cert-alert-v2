@@ -42,7 +42,7 @@ export default function Table({ guardData }) {
                   ) : (
                     data
                   )}
-                  {data}
+                  {data !== data.status}
                 </td>
               ))}
           </tr>
