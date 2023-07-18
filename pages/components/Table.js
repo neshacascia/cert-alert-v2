@@ -1,4 +1,10 @@
 export default function Table({ guardData }) {
+  const statusStyles = {
+    Active: 'text-green-600 bg-green-100 rounded-lg py-2 px-3',
+    'Expiring Soon': 'text-yellow-600 bg-yellow-100 rounded-lg py-2 px-3',
+    Expired: 'text-red-600 bg-red-100 rounded-lg py-2 px-3',
+  };
+
   return (
     <table className="text-left w-full h-auto border-collapse table-auto">
       <thead className="bg-slate-200 h-16 border-b-2 border-slate-400">
