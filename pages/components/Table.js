@@ -12,8 +12,11 @@ export default function Table({ guardData }) {
           <th className="text-slate-700 text-[15px] font-medium pl-8">
             Security Licence No.
           </th>
-          <th className="text-slate-700 text-[15px] font-medium rounded-tr-lg pl-8">
+          <th className="text-slate-700 text-[15px] font-medium pl-8">
             Licence Expiry Date
+          </th>
+          <th className="text-slate-700 text-[15px] font-medium rounded-tr-lg pl-8">
+            Status
           </th>
         </tr>
       </thead>
