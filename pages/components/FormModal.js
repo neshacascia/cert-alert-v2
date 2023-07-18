@@ -20,6 +20,14 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
       licenceExpiryInputRef.current.value
     );
 
+    if (enteredLicenceExpiryValue.isAfter(currentDate)) {
+      status = 'Active';
+    } else if (enteredLicenceExpiryValue.isBefore(currentDate)) {
+      status = 'Expiring Soon!';
+    } else {
+      status = 'Expired!';
+    }
+
     const guardData = {
       firstName: enteredFirstNameValue,
       lastName: enteredLastNameValue,
