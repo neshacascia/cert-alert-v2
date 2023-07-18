@@ -9,6 +9,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
 
   const currentDate = moment().format('YYYY/MM/D');
   let status;
+  let note;
 
   function submitHandler(e) {
     e.preventDefault();
@@ -22,11 +23,24 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
       moment(enteredLicenceExpiryValue, 'YYYY-MM-DD').diff(currentDate, 'days')
     );
 
-    if (daysDiff >= 60) {
+    if (daysDiff > 60) {
       status = 'Active';
-    } else if (daysDiff >= 1) {
-      status = 'Expiring Soon';
-    } else if (daysDiff === 0) {
+    } else if (daysDiff === 60) {
+      status = 'Expiring in ';
+      note = '2 months';
+    } else if (daysDiff < 60 && daysDiff > 30) {
+      status = 'Expiring in ';
+      note = '+1 month';
+    } else if (daysDiff === 30) {
+      status = 'Expiring in ';
+      note = '1 month';
+    } else if (daysDiff < 30 && daysDiff > 14) {
+      status = 'Expiring in ';
+      note = '+2 weeks';
+    } else if (daysDiff === 14) {
+      status = 'Expiring in ';
+      note = '2 weeks';
+    } else if (daysDiff <= 0) {
       status = 'Expired';
     }
 
@@ -36,6 +50,7 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
       licenceNo: enteredLicenceNoValue,
       licenceExpiry: enteredLicenceExpiryValue,
       status: status,
+      note: note,
     };
 
     addGuardHandler(guardData);
