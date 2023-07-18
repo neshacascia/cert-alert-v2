@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import moment from 'moment';
 
 export default function FormModal({ setFormOpened, addGuardHandler }) {
   const firstNameInputRef = useRef();
@@ -12,7 +13,9 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
     const enteredFirstNameValue = firstNameInputRef.current.value;
     const enteredLastNameValue = lastNameInputRef.current.value;
     const enteredLicenceNoValue = licenceNoInputRef.current.value;
-    const enteredLicenceExpiryValue = licenceExpiryInputRef.current.value;
+    const enteredLicenceExpiryValue = moment(
+      licenceExpiryInputRef.current.value
+    );
 
     const guardData = {
       firstName: enteredFirstNameValue,
