@@ -19,8 +19,9 @@ export default function FormModal({ setFormOpened, addGuardHandler }) {
     const enteredLicenceNoValue = licenceNoInputRef.current.value;
     const enteredLicenceExpiryValue = licenceExpiryInputRef.current.value;
 
-    const daysDiff = Math.abs(
-      moment(enteredLicenceExpiryValue, 'YYYY-MM-DD').diff(currentDate, 'days')
+    const daysDiff = moment(enteredLicenceExpiryValue, 'YYYY-MM-DD').diff(
+      currentDate,
+      'days'
     );
 
     if (daysDiff > 60) {
