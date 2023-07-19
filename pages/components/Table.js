@@ -1,7 +1,7 @@
 export default function Table({ guardData }) {
   const statusStyles = {
     Active: 'text-green-600 bg-green-100 rounded-lg py-2 px-3',
-    'Expiring Soon': 'text-yellow-600 bg-yellow-100 rounded-lg py-2 px-3',
+    'Expiring in ': 'text-yellow-600 bg-yellow-100 rounded-lg py-2 px-3',
     Expired: 'text-red-600 bg-red-100 rounded-lg py-2 px-3',
   };
 
@@ -35,16 +35,19 @@ export default function Table({ guardData }) {
           >
             {Object.values(guard)
               .slice(1)
-              .map((data, ind, arr) => (
-                <td className="text-gray-700 pl-8 py-3">
-                  {ind === arr.length - 1 ? (
-                    <span className={statusStyles[data]}>{data}</span>
-                  ) : (
-                    data
-                  )}
-                  {data !== data.status}
-                </td>
-              ))}
+              .map((data, ind, arr) =>
+                ind !== arr.length - 1 ? (
+                  <td className="text-gray-700 pl-8 py-3">
+                    {ind === 4 ? (
+                      <span className={statusStyles[data]}>
+                        {arr[4] + arr[5]}
+                      </span>
+                    ) : (
+                      data
+                    )}
+                  </td>
+                ) : null
+              )}
           </tr>
         ))}
       </tbody>
