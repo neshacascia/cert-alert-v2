@@ -56,6 +56,7 @@ export async function getServerSideProps() {
         licenceNo: guard.licenceNo,
         licenceExpiry: guard.licenceExpiry,
         status: guard.status,
+        note: guard.note || '',
       })),
     },
   };
